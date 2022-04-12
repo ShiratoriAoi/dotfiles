@@ -1,0 +1,16 @@
+[user]
+	name = Aoi SHIRATORI
+	email = aoy.shiratori@gmail.com
+[alias]
+	st = status
+	br = branch
+	co = checkout
+    cm = commit
+	gra = log --all --decorate --graph --oneline
+	untra = rm --cached
+[merge]
+	ff = false
+[pull]
+	ff = only
+[core]
+	editor = nvim

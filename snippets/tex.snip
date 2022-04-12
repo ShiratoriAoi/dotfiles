@@ -1,0 +1,85 @@
+snippet     index
+options     head
+	%frame   : begin frame end
+	%block   : begin block end
+	%m, mm   : math
+	%dra     : draft
+	%item    : begin itemize end 
+	%itembox : begin itembox end 
+	%table   : table template
+	%class   : ex. class NP
+	%lang    : ex. language L
+	$mrm     : \mathrm{}
+	%;;      : kakko {}
+
+snippet     frame
+options     head
+	\\begin{frame}\\frametitle{${1}}
+		${0}
+	\\end{frame}
+
+snippet     block
+options     head
+	\\begin{block}{${1}}
+		${0}
+	\\end{block}
+
+snippet     m
+	$${1}$
+
+snippet     mm
+options     head
+	\[
+		${1}
+	\]
+
+snippet		dra
+options     head
+	\ifJpn
+		ja ${0}
+	\fi\ifEng
+		en
+	\fi
+
+snippet     item
+options     head
+	\\begin{itemize}
+		${0}
+	\\end{itemize}
+
+snippet     itembox
+options     head
+	begin{itembox}
+	end{itembox}
+
+snippet     table
+options     head
+	\begin{table}[htb]
+	    \begin{tabular}{|l|c|r||r|} \hline
+	        メニュー & サイズ & 値段 & カロリー \\\\ \hline \hline
+	        牛丼 & 並盛 & 500円 & 600 kcal \\\\
+	        牛丼 & 大盛 & 1,000円 & 800 kcal \\\\
+	        牛丼 & 特盛 & 1,500円 & 1,000 kcal \\\\ \hline
+	        牛皿 & 並盛 & 300円 & 250 kcal \\\\
+	        牛皿 & 大盛 & 700円 & 300 kcal \\\\
+	        牛皿 & 特盛 & 1,000円 & 350 kcal \\\\ \hline
+	    \end{tabular}
+	\end{table}
+
+snippet     lang
+options     word
+	\lang{${1}}${0}
+
+snippet     class
+options     word
+	\class{${1}}${0}
+
+snippet     mrm
+options     word
+	\mathrm{${1}}${0}
+
+snippet     ;;
+options     word
+	{${1}}${0}
+
+

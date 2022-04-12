@@ -1,0 +1,15 @@
+
+open cheatsheets via denite.
+<Leader>dc
+
+1. Cheatsheet list
+command_vim.txt
+command_git.txt
+
+2. Setup
+setup_environment.txt
+setup_tex.txt
+
+3. Memo
+memo_research.txt
+memo_project.txt
