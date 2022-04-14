@@ -58,4 +58,8 @@ else
   alias diff='diff -u'
 fi
 
+# rbenv path
+[[ -d ~/.rbenv  ]] && \
+  export PATH=${HOME}/.rbenv/bin:${PATH} && \
+  eval "$(rbenv init -)"
 
