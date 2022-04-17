@@ -30,3 +30,6 @@ git tag -a v1.4
 
 タグのpush
 git push origin --tags
+
+addしたファイルの差分を表示
+git diff --cached
