@@ -8,6 +8,7 @@
     cm = commit
 	gra = log --all --decorate --graph --oneline
 	untra = rm --cached
+    diffc = diff --cached
 [merge]
 	ff = false
 [pull]
