@@ -40,6 +40,12 @@ $ cd ~/Dev
 $ mkdir dotfiles
 $ git clone https://github.com/sai708th/dotfiles dotfiles
 
+3.1 SSH
+$ mkdir -p ~/.ssh && cd ~/.ssh
+$ ssh-keygen -f github -t rsa -N ""
+$ ssh-keygen -f bitbucket -t rsa -N ""
+add pub file to each websites.
+
 4. Install items
 $ brew install neovim
 $ brew install tmux
