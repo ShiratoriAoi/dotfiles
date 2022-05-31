@@ -36,6 +36,9 @@ follow the guide on the official site.
 3. Clone dotfiles repository
 https://github.com/sai708th/dotfiles
 $ mkdir ~/Dev
+$ mkdir ~/Dev/Projects
+$ mkdir ~/Dev/Projects/Developing
+$ mkdir ~/Dev/Projects/MyLibrary
 $ cd ~/Dev
 $ mkdir dotfiles
 $ git clone https://github.com/sai708th/dotfiles dotfiles
