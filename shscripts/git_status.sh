@@ -1,9 +1,9 @@
 #!/bin/bash
 
-function check_status() {
+function check_one_git_status() {
     if [ -d "$1" ] ; then 
         #directory sonzai suru.
-        dotgit="$1/.git"
+        local dotgit="$1/.git"
         if [ -e "$dotgit" ] ; then
             echo -e "\e[37;44;5m `basename "$1"` \e[m"
             echo "    $1"
@@ -18,9 +18,13 @@ function check_status() {
     fi
 }
 
-echo "----------------------------------------------------------"
-while [ $# -gt 0 ] ; do
-    check_status $1
-    shift
-done
-echo "----------------------------------------------------------"
+function check_git_status() {
+    echo "----------------------------------------------------------"
+    while [ $# -gt 0 ] ; do
+        check_one_git_status $1
+        shift
+    done
+    echo "----------------------------------------------------------"
+}
+
+
