@@ -1,11 +1,10 @@
 コミットの上書き
 git commit --amend 
 
-ブランチを切る（作成）
-git checkout 29d1c48 -b feature/hoge
+git checkout 29d1c48 -b feature/hoge ブランチの作
+git checkout -b dev origin/dev       追跡ブランチの作成
 
-ブランチを削除
-git branch -d feature/hoge
+git branch -d feature/hoge           ブランチを削除
 
 fast-forward (from-branchをcheckoutしてから)
 git merge to-branch --ff
