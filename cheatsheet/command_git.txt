@@ -17,17 +17,16 @@ git diff --name-only <commit id 1> <commit id 2>
 
 差分出力
 git diff <commit id 1> <commit id 2> <filename> (> hoge.txt)
+git diffc                            = git diff --cached
 
 HEADがmasterをさしていて、masterは分岐してorigin/masterと分かれているときのrebase方法
 git rebase origin/master
 
-ちゃんとしたタグ(annotated)
-git tag -a v1.4 
-git tag -a v1.4 -m 'my version 1.4'
+git tag -a v1.4                      annotated 注釈付きタグ
+git tag -a v1.4 -m 'my version 1.4'  メッセージをつける
+git tag -d v1.4                      delete
+git push origin --tags               tagのpush
+git push origin :refs/tags/v1.4      remote delete
 
 
-タグのpush
-git push origin --tags
 
-addしたファイルの差分を表示
-git diff --cached
