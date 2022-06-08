@@ -9,6 +9,8 @@ function check_one_git_status() {
             echo "  $1"
             if [ $2 = "fetch" ] ; then
                 git -C $1 fetch
+            elif [ $2 = "ffmerge" ] ; then
+                git -C $1 merge --ff
             fi
             git -C $1 status -sb 
             echo "----------------------------------------------------------"
@@ -34,6 +36,14 @@ function check_git_status_with_fetch() {
     echo "----------------------------------------------------------"
     while [ $# -gt 0 ] ; do
         check_one_git_status $1 "fetch"
+        shift
+    done
+}
+
+function check_git_status_with_merge() {
+    echo "----------------------------------------------------------"
+    while [ $# -gt 0 ] ; do
+        check_one_git_status $1 "ffmerge"
         shift
     done
 }

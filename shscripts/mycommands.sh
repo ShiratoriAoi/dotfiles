@@ -13,12 +13,15 @@ function chgit() {
     elif [ "$1" = "-h" ] ; then
         echo "chgit"
         echo "chgit fetch"
+        echo "chgit ffmerge"
         echo "chgit cd <dir>"
         echo "chgit -h"
     elif [ "$1" = "cd" ] ; then
         cd `echo $STR | tr " " "\n" | grep "$2"`
     elif [ "$1" = fetch ] ; then
         check_git_status_with_fetch ${=STR}
+    elif [ "$1" = ffmerge ] ; then
+        check_git_status_with_merge ${=STR}
     fi 
 }
 
