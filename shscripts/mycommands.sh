@@ -14,6 +14,7 @@ function chgit() {
         echo "chgit"
         echo "chgit fetch"
         echo "chgit ffmerge"
+        echo "chgit clone <path: projects.txt>"
         echo "chgit cd <dir>"
         echo "chgit -h"
     elif [ "$1" = "cd" ] ; then
@@ -22,6 +23,15 @@ function chgit() {
         check_git_status_with_fetch ${=STR}
     elif [ "$1" = ffmerge ] ; then
         check_git_status_with_merge ${=STR}
+    elif [ "$1" = clone ] ; then 
+        if [ $# -eq 2 ] ; then 
+            if [ -e "$2" ] ; then
+                clone_git_projects `cat "$2"`
+            fi
+        else
+            echo "invalid input"
+            echo "format: chgit clone <path>"
+        fi
     fi 
 }
 
