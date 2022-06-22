@@ -25,6 +25,8 @@ call plug#begin()
     Plug 'apple/swift'
     Plug 'keith/swift.vim' 
 
+    Plug 'wfxr/minimap.vim'
+
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
