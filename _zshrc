@@ -1,7 +1,7 @@
 echo "sourced _zshrc"
 
 autoload -U compinit
-compinit
+compinit -u
 
 setopt IGNOREEOF
 
@@ -41,6 +41,10 @@ export PATH="$PATH:$HOME/.nodebrew/current/bin"
 
 # texlive path (2021)
 export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
+
+# deno
+export DENO_INSTALL="/Users/develop/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
 
 # alias
 if type gmv > /dev/null 2>&1; then
