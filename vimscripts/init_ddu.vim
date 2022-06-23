@@ -62,6 +62,7 @@ nnoremap <silent> <SID>[ddu]r :<C-u>Ddu mr -source-param-kind='mrr'<CR>
 nnoremap <silent> <SID>[ddu]b :<C-u>Ddu buffer<CR>
 nnoremap <silent> <SID>[ddu]g :<C-u>DduRg<CR>
 nnoremap <silent> <SID>[ddu]G :<C-u>Ddu rg -source-param-input='`expand('<cword>')`'<CR>
+nnoremap <silent> <SID>[ddu]o :<C-u>Unite outline -no-split<CR>
 "nnoremap <silent> <SID>[ddu]r :<C-u>Ddu register<CR>
 "nnoremap <silent> <SID>[ddu]n :<C-u>Ddu file -source-param-new -volatile<CR>
 "nnoremap <silent> <SID>[ddu]f :<C-u>Ddu file<CR>
