@@ -86,6 +86,8 @@ in nvim, :UpdateRemotePlugins -> nanka ugoku youni naru.
 8. Setup ddu
 8.1 install deno
 $ curl -fsSL https://deno.land/install.sh | sh
+8.2 ripgrep
+$ brew install ripgrep
 
 
 100. Install other tools

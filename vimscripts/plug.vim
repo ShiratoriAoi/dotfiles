@@ -3,7 +3,7 @@ call plug#begin()
     " needs for vimfiler
     Plug 'Shougo/unite.vim' 
     " Plug 'Shougo/denite.nvim'
-    Plug 'Shougo/neomru.vim'
+    " Plug 'Shougo/neomru.vim'
     Plug 'Shougo/vimfiler.vim'
     Plug 'Shougo/neosnippet-snippets'
     Plug 'Shougo/neosnippet'
@@ -16,11 +16,13 @@ call plug#begin()
     Plug 'Shougo/ddu-source-file'
     Plug 'Shougo/ddu-source-register'
     Plug 'kuuote/ddu-source-mr'
+    Plug 'shun/ddu-source-rg'
     Plug 'lambdalisue/mr.vim'
     Plug 'shun/ddu-source-buffer'
     Plug 'Shougo/ddu-filter-matcher_substring'
     Plug 'Shougo/ddu-commands.vim'
     Plug 'Shougo/ddu-kind-file'
+    Plug 'Shougo/unite-outline'
 
     Plug 'vim-jp/vimdoc-ja'
 

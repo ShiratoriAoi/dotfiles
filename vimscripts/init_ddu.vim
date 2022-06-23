@@ -15,6 +15,19 @@ call ddu#custom#patch_global({
                             \   }
                             \ })
 
+call ddu#custom#patch_local('grep', {
+\   'sourceParams' : {
+\     'rg' : {
+\       'args': ['--column', '--no-heading', '--color', 'never'],
+\     },
+\   },
+\   'uiParams': {
+\     'ff': {
+\       'startFilter': v:false,
+\     }
+\   },
+\ })
+
 " key mapping for fzf
 autocmd FileType ddu-ff call s:ddu_my_settings()
 function! s:ddu_my_settings() abort
@@ -45,8 +58,21 @@ nmap     <Leader>d  <SID>[ddu]
 nnoremap <silent> <SID>[ddu]d :<C-u>Ddu file -source-option-path='`expand('~/Dev/dotfiles')`'<CR>
 nnoremap <silent> <SID>[ddu]m :<C-u>Ddu file -source-option-path='`expand('~/Dev/Projects/MyLibrary/privatememos')`'<CR>
 nnoremap <silent> <SID>[ddu]j :<C-u>Ddu mr<CR>
-nnoremap <silent> <SID>[ddu]g :<C-u>Ddu mr -source-param-kind='mrr'<CR>
+nnoremap <silent> <SID>[ddu]r :<C-u>Ddu mr -source-param-kind='mrr'<CR>
 nnoremap <silent> <SID>[ddu]b :<C-u>Ddu buffer<CR>
-nnoremap <silent> <SID>[ddu]r :<C-u>Ddu register<CR>
+nnoremap <silent> <SID>[ddu]g :<C-u>DduRg<CR>
+nnoremap <silent> <SID>[ddu]G :<C-u>Ddu rg -source-param-input='`expand('<cword>')`'<CR>
+"nnoremap <silent> <SID>[ddu]r :<C-u>Ddu register<CR>
 "nnoremap <silent> <SID>[ddu]n :<C-u>Ddu file -source-param-new -volatile<CR>
 "nnoremap <silent> <SID>[ddu]f :<C-u>Ddu file<CR>
+"nmap <silent> <SID>[ddu]g <Cmd>call ddu#start({
+"\   'name': 'grep',
+"\   'sources':[
+"\     {'name': 'rg', 'params': {'input': expand('<cword>')}}
+"\   ],
+"\ })<CR>
+"
+"
+"
+"
+"
