@@ -45,7 +45,7 @@ call plug#begin()
     Plug 'wfxr/minimap.vim'
 
     " autocomplete
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 "#-------------------

@@ -86,6 +86,8 @@ in nvim, :UpdateRemotePlugins -> nanka ugoku youni naru.
 8. Setup ddu
 8.1 install deno
 $ curl -fsSL https://deno.land/install.sh | sh
+or
+$ brew install deno
 8.2 ripgrep
 $ brew install ripgrep
 
@@ -95,6 +97,7 @@ $ brew install tree
 $ brew install knqyf263/pet/pet
 $ brew install coreutils 
 $ brew install colordiff
+$ brew install code-minimap
 
 #--------------------------------------------
 # Haskell
