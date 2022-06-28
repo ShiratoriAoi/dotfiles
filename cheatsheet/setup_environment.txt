@@ -97,7 +97,7 @@ $ brew install tree
 $ brew install knqyf263/pet/pet
 $ brew install coreutils 
 $ brew install colordiff
-$ brew install code-minimap
+# $ brew install code-minimap
 
 #--------------------------------------------
 # Haskell

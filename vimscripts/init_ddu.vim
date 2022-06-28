@@ -1,19 +1,22 @@
 
 " global settings
 call ddu#custom#patch_global({
-            \   'ui': 'ff',
-            \   'sources': [{'name': 'file_rec', 'params': {}}],
-            \   'sourceOptions': {
-                \     '_': {
-                    \       'matchers': ['matcher_substring'],
-                    \     },
-                    \   },
-                    \   'kindOptions': {
-                        \     'file': {
-                            \       'defaultAction': 'open',
-                            \     },
-                            \   }
-                            \ })
+    \   'ui': 'ff',
+    \   'sources': [{'name': 'file_rec', 'params': {}}],
+    \   'sourceOptions': {
+    \     '_': {
+    \       'matchers': ['matcher_substring'],
+    \     },
+    \   },
+    \   'kindOptions': {
+    \     'file': {
+    \       'defaultAction': 'open',
+    \     },
+    \     'custom-list': {
+    \       'defaultAction': 'callback',
+    \     },
+    \   }
+    \ })
 
 call ddu#custom#patch_local('grep', {
 \   'sourceParams' : {
@@ -63,6 +66,9 @@ nnoremap <silent> <SID>[ddu]b :<C-u>Ddu buffer<CR>
 nnoremap <silent> <SID>[ddu]g :<C-u>DduRg<CR>
 nnoremap <silent> <SID>[ddu]G :<C-u>Ddu rg -source-param-input='`expand('<cword>')`'<CR>
 nnoremap <silent> <SID>[ddu]o :<C-u>Unite outline -no-split<CR>
+nnoremap <silent> <SID>[ddu]s :<C-u>NeoSnippetEdit<CR>
+nnoremap <silent> <SID>[ddu]i :<C-u>Ddu rg -source-param-input='^nnoremap.*silent.*ddu' -source-param-path='`expand('~/Dev/dotfiles')`'<CR>
+
 "nnoremap <silent> <SID>[ddu]r :<C-u>Ddu register<CR>
 "nnoremap <silent> <SID>[ddu]n :<C-u>Ddu file -source-param-new -volatile<CR>
 "nnoremap <silent> <SID>[ddu]f :<C-u>Ddu file<CR>
@@ -75,5 +81,4 @@ nnoremap <silent> <SID>[ddu]o :<C-u>Unite outline -no-split<CR>
 "
 "
 "
-"
-"
+

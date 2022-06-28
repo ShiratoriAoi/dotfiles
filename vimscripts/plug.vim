@@ -23,6 +23,7 @@ call plug#begin()
     Plug 'Shougo/ddu-commands.vim'
     Plug 'Shougo/ddu-kind-file'
     Plug 'Shougo/unite-outline'
+    Plug 'Shougo/ddu-source-line'
 
     Plug 'vim-jp/vimdoc-ja'
 
@@ -42,7 +43,7 @@ call plug#begin()
     Plug 'apple/swift'
     Plug 'keith/swift.vim' 
 
-    Plug 'wfxr/minimap.vim'
+    " Plug 'wfxr/minimap.vim'
 
     " autocomplete
     " Plug 'neoclide/coc.nvim', {'branch': 'release'}
