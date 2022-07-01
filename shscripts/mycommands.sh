@@ -5,7 +5,8 @@ function chgit() {
     local REPO1=`find $HOME/Dev/Projects/Developing -maxdepth 1 -mindepth 1 -type d | tr "\n" " "`
     local REPO2=`find $HOME/Dev/Projects/MyLibrary  -maxdepth 1 -mindepth 1 -type d | tr "\n" " "`
     local REPO3="$HOME/Dev/dotfiles"
-    local STR="$REPO1 $REPO2 $REPO3"
+    local REPO4="$HOME/Dev/aoymoon"
+    local STR="$REPO1 $REPO2 $REPO3 $REPO4"
 
     if [ $# -eq 0 ] ; then
         #=→空白の箇所で単語分割
