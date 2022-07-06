@@ -205,6 +205,8 @@ snippet     uib
 options     head
 	let rect${1} = CGRect.zero
 	let btn$1 = UIButton(frame: rect$1)
+	//let btn = UIButton(type: .system) //for image auto highlight. when custom not auto highlight.
+	// use btn.tintColor for setImage. otherwise use setBackgroundImage.
 	let sel$1 = #selector(${2}) // called method must be declared as @objc
 	btn$1.setTitle("hoge", for: .normal)
 	btn$1.setTitleColor(colorText, for: .normal)
