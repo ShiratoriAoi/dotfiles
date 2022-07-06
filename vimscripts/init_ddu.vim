@@ -15,21 +15,26 @@ call ddu#custom#patch_global({
     \     'custom-list': {
     \       'defaultAction': 'callback',
     \     },
+    \   },
+    \   'sourceParams' : {
+    \     'rg' : {
+    \       'args': ['--ignore-case', '--json', '--column', '--no-heading', '--color', 'never'],
+    \     },
     \   }
     \ })
 
-call ddu#custom#patch_local('grep', {
-\   'sourceParams' : {
-\     'rg' : {
-\       'args': ['--column', '--no-heading', '--color', 'never'],
-\     },
-\   },
-\   'uiParams': {
-\     'ff': {
-\       'startFilter': v:false,
-\     }
-\   },
-\ })
+"call ddu#custom#patch_local('grep', {
+"\   'sourceParams' : {
+"\     'rg' : {
+"\       'args': ['--ignore-case', '--json', '--column', '--no-heading', '--color', 'never'],
+"\     },
+"\   },
+"\   'uiParams': {
+"\     'ff': {
+"\       'startFilter': v:false,
+"\     }
+"\   },
+"\ })
 
 " key mapping for fzf
 autocmd FileType ddu-ff call s:ddu_my_settings()
