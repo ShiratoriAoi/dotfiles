@@ -293,6 +293,11 @@ options     head
 	let recognizer = UI${1:Pan}GestureRecognizer(target: self, action: selector)
 	${3:uiview}.addGestureRecognizer(recognizer)
 
+# UIScreen
+snippet     uiscreen
+options     head
+	let width = UIScreen.main.bounds.size.width
+
 #=========================
 # CG~
 #=========================

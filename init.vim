@@ -51,7 +51,7 @@ set clipboard=unnamed
 set listchars=tab:»-,trail:-,nbsp:%
 set signcolumn=yes
 
-
+set notagbsearch
 
 "---------------------------------------
 " 3. Color Scheme
