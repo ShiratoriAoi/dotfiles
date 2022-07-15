@@ -85,6 +85,7 @@ nnoremap <F5> zM
 nnoremap <F6> zm
 nnoremap <F7> zr
 nnoremap <F8> zR
+nnoremap <F9> :set list!<CR>
 
 
 
