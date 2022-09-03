@@ -46,6 +46,11 @@ export PATH=/usr/local/texlive/2021/bin/x86_64-linux:$PATH
 export DENO_INSTALL="/Users/develop/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# pyenv 
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # alias
 if type gmv > /dev/null 2>&1; then
     alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
@@ -71,4 +76,20 @@ fi
 source $HOME_DOTFILES/shscripts/mycommands.sh
 
 
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/naoya/.pyenv/versions/anaconda3-2022.05/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/naoya/.pyenv/versions/anaconda3-2022.05/etc/profile.d/conda.sh" ]; then
+        . "/home/naoya/.pyenv/versions/anaconda3-2022.05/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/naoya/.pyenv/versions/anaconda3-2022.05/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
