@@ -62,6 +62,7 @@ highlight DiffAdd    ctermfg=white ctermbg=darkblue
 highlight DiffDelete ctermfg=brown ctermbg=0
 highlight DiffChange ctermfg=gray  ctermbg=brown
 highlight DiffText   ctermfg=white ctermbg=brown
+highlight IncSearch  ctermfg=3     ctermbg=10
 
 
 
