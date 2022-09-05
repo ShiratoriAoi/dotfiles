@@ -70,7 +70,7 @@ nnoremap <silent> <SID>[ddu]r :<C-u>Ddu mr -source-param-kind='mrr'<CR>
 nnoremap <silent> <SID>[ddu]b :<C-u>Ddu buffer<CR>
 nnoremap <silent> <SID>[ddu]g :<C-u>DduRg<CR>
 nnoremap <silent> <SID>[ddu]G :<C-u>Ddu rg -source-param-input='`expand('<cword>')`'<CR>
-nnoremap <silent> <SID>[ddu]o :<C-u>Unite outline -no-split<CR>
+nnoremap <silent> <SID>[ddu]o :<C-u>Vista!!<CR>
 nnoremap <silent> <SID>[ddu]s :<C-u>NeoSnippetEdit<CR>
 nnoremap <silent> <SID>[ddu]i :<C-u>Ddu rg -source-param-input='^nnoremap.*silent.*ddu' -source-param-path='`expand('~/Dev/dotfiles')`'<CR>
 

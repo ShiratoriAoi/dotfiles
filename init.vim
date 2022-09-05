@@ -88,7 +88,6 @@ nnoremap <F8> zR
 nnoremap <F9> :set list!<CR>
 
 
-
 "---------------------------------------
 " 6. convenience key mapping
 "---------------------------------------
@@ -137,8 +136,8 @@ command! -nargs=1 Vimswift vim /<args>/**/*.swift
 "--------------------------------------
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 let s:vimscripts_dir = $HOME_DOTFILES . '/vimscripts'
@@ -149,7 +148,8 @@ source `=s:vimscripts_dir . '/plug.vim'`
 source `=s:vimscripts_dir . '/init_deol.vim'`
 source `=s:vimscripts_dir . '/init_ddu.vim'`
 source `=s:vimscripts_dir . '/init_swift.vim'`
-"source `=s:vimscripts_dir . '/init_coc.vim'`
+source `=s:vimscripts_dir . '/init_coc.vim'`
+source `=s:vimscripts_dir . '/init_vista.vim'`
 "source `=s:vimscripts_dir . '/init_gitgutter.vim'`
 source `=s:vimscripts_dir . '/init_vimfiler.vim'`
 source `=s:vimscripts_dir . '/init_neosnippet.vim'`

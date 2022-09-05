@@ -26,11 +26,8 @@ call plug#begin()
     Plug 'Shougo/ddu-source-line'
 
     Plug 'vim-jp/vimdoc-ja'
-
     Plug 'terryma/vim-expand-region'
-
     Plug 'jsfaint/gen_tags.vim'
-
 
     " git
     Plug 'tpope/vim-fugitive'
@@ -38,22 +35,15 @@ call plug#begin()
     " Plug 'airblade/vim-gitgutter'
     Plug 'kana/vim-submode'
 
-    " swift
-    " syntax
+    " swift, syntax
     Plug 'apple/swift'
     Plug 'keith/swift.vim' 
 
-    " Plug 'wfxr/minimap.vim'
+    " tag viewer like ide
+    Plug 'liuchengxu/vista.vim'
 
     " autocomplete
-    " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
-"#-------------------
-"# swift
-"#-------------------
-"#
-"#[[plugins]]
-"#repo = 'gfontenot/vim-xcode'
-"#on_ft = ['swift']
-"#
+
