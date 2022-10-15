@@ -37,7 +37,7 @@ function chgit() {
     fi 
 }
 
-function chtd() {
+function cht() {
     local pathtd="$HOME/Dev/Projects/MyLibrary/PrivateMemos/ToDo/td.txt"
     touch $pathtd
     local td=`cat $pathtd`
@@ -46,23 +46,56 @@ function chtd() {
         echo 'help: -h'
         echo `head -n 1 $pathtd`
     elif [ "$1" = "-h" ] ; then
-        echo "chtd"             # show a task
-        echo "chtd show"        # show all tasks
-        echo "chtd stack"       # add stack todo
-        #echo "chtd <tag>stack"  # add stack todo to tagged position
-        echo "chtd queue"       # add queue todo
-        #echo "chtd <tag>queue"  # add queue todo to tagged position
-        echo "chtd -h"          # help
+        echo "cht"             # show a task
+        echo "cht show"        # show all tasks
+        echo "cht stack"       # add stack todo
+        #echo "cht <tag>stack" # add stack todo to tagged position
+        echo "cht queue"       # add queue todo
+        #echo "cht <tag>queue" # add queue todo to tagged position
+        echo "cht done"        # remove top todo
+        echo "cht -h"          # help
     elif [ "$1" = "stack" ] ; then
         sed -i "1i$2" "$pathtd"
     elif [ "$1" = "queue" ] ; then
-        sed -i "a $2" "$pathtd"
+        sed -i "$ a $2" "$pathtd"
     elif [ "$1" = "show" ] ; then
         cat $pathtd
+    elif [ "$1" = "done" ] ; then
+        if [ $# -eq 1 ] ; then
+            sed -i "1d" "$pathtd"
+        elif [ "$#" -eq 2 ] ; then
+            sed -i "$2d" "$pathtd"
+        fi
     fi
     #cat queue.txt | grep -n "^- " | sed "s/:.*$//"
 }
 
-
+function chall() {
+    if [ $# -eq 0 ] ; then
+        echo 'help: -h'
+        echo `head -n 1 $pathtd`
+    elif [ "$1" = "-h" ] ; then
+        echo "cht"             # show a task
+        echo "cht show"        # show all tasks
+        echo "cht stack"       # add stack todo
+        #echo "cht <tag>stack" # add stack todo to tagged position
+        echo "cht queue"       # add queue todo
+        #echo "cht <tag>queue" # add queue todo to tagged position
+        echo "cht done"        # remove top todo
+        echo "cht -h"          # help
+    elif [ "$1" = "stack" ] ; then
+        sed -i "1i$2" "$pathtd"
+    elif [ "$1" = "queue" ] ; then
+        sed -i "$ a $2" "$pathtd"
+    elif [ "$1" = "show" ] ; then
+        cat $pathtd
+    elif [ "$1" = "done" ] ; then
+        if [ $# -eq 1 ] ; then
+            sed -i "1d" "$pathtd"
+        elif [ "$#" -eq 2 ] ; then
+            sed -i "$2d" "$pathtd"
+        fi
+    fi
+}
 
 
