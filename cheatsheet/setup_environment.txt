@@ -16,6 +16,8 @@ pet
 git
 reattach-to-user-namespace
 gmv(coreutils) <- safe rm
+gsed           <- replace mac sed with gsed
+
 
 0. Color settings
 change color scheme to Solarized Dark on this url.
