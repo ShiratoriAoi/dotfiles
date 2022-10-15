@@ -112,6 +112,8 @@ nnoremap gk k
 noremap ; :
 noremap : ;
 
+nnoremap <C-n> :<C-u>call vista#jump#NextTopLevel()<CR>
+nnoremap <C-p> :<C-u>call vista#jump#PrevTopLevel()<CR>
 
 
 "---------------------------------------
@@ -121,7 +123,6 @@ nnoremap <silent> <Leader>to :<C-u>tabedit<cr>
 nnoremap <silent> <Leader>tc :<C-u>tabclose<cr>
 nnoremap <silent> <Leader>th gT
 nnoremap <silent> <Leader>tl gt
-
 
 
 "---------------------------------------

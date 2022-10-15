@@ -56,6 +56,9 @@ if type gmv > /dev/null 2>&1; then
     alias rm='gmv -f --backup=numbered --target-directory ~/.Trash'
     alias mv='mv -i'
 fi 
+if type gsed > /dev/null 2>&1; then
+    alias sed='gsed'
+fi 
 alias cd='(){ cd $1 ; ls }'
 alias tree='tree -L 2'
 alias ctags="`brew --prefix`/bin/ctags"
