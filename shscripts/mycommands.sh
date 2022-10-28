@@ -80,6 +80,9 @@ function chall() {
     elif [ "$1" = "-h" ] ; then
         echo "chall"           # check all
         echo "chall -h"          # help
+        echo '---------------------------'
+        echo "chgit"
+        echo "cht"
     elif [ "$1" = "stack" ] ; then
         sed -i "1i$2" "$pathtd"
     elif [ "$1" = "queue" ] ; then
