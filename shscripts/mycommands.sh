@@ -43,21 +43,23 @@ function cht() {
     local td=`cat $pathtd`
 
     if [ $# -eq 0 ] ; then
-        echo 'help: -h'
         echo `head -n 1 $pathtd`
     elif [ "$1" = "-h" ] ; then
-        echo "cht"             # show a task
-        echo "cht show"        # show all tasks
-        echo "cht stack"       # add stack todo
-        #echo "cht <tag>stack" # add stack todo to tagged position
-        echo "cht queue"       # add queue todo
-        #echo "cht <tag>queue" # add queue todo to tagged position
-        echo "cht done"        # remove top todo
-        echo "cht -h"          # help
+        echo "cht"                    # show a task
+        echo "cht show"               # show all tasks
+        echo "cht stack <memo>"       # add stack todo
+        echo "cht restack <number>"   # restack selected row
+        echo "cht queue <memo>"       # add queue todo
+        echo "cht done (<number>)"    # remove top todo
+        echo "cht -h"                 # help
     elif [ "$1" = "stack" ] ; then
         sed -i "1i$2" "$pathtd"
     elif [ "$1" = "queue" ] ; then
         sed -i "$ a $2" "$pathtd"
+    elif [ "$1" = "restack" ] ; then
+        local a=`sed -n "$2P" "$pathtd"`
+        sed -i "$2d" "$pathtd"
+        sed -i "1i$a" "$pathtd"
     elif [ "$1" = "show" ] ; then
         cat -n $pathtd
     elif [ "$1" = "done" ] ; then
@@ -72,8 +74,6 @@ function cht() {
 
 function chall() {
     if [ $# -eq 0 ] ; then
-        echo 'help: -h'
-        echo '---------------------------'
         chgit
         echo '---------------------------'
         cht
