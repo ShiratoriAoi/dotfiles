@@ -214,8 +214,16 @@ options     head
 	btn$1.center = CGPoint.zero
 	btn$1.tag = 0
 	btn$1.addTarget(self, action: sel$1, for: .touchUpInside)
+	btn$1.addAction(.init{_ in self.update("d")}, for: .touchUpInside)
 	${3}.addSubview(btn$1)
 	${0}
+
+snippet     addAction
+options     word
+	//.touchUpInside, .valueChanged
+	addAction(.init{_ in 
+		${0}
+	}, for: .${1:touchUpInside})
 
 # UIStack
 snippet     uistack
