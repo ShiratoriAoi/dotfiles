@@ -53,10 +53,17 @@ set signcolumn=yes
 
 set notagbsearch
 
+
+"---------------------------------------
+" 2.5. var setup
+"---------------------------------------
+let s:vimscripts_dir = $HOME_DOTFILES . '/vimscripts'
+
 "---------------------------------------
 " 3. Color Scheme
 "---------------------------------------
-colorscheme desert
+source `=s:vimscripts_dir . '/aoidesert.vim'` 
+colorscheme aoidesert
 hi Search ctermfg=white
 highlight DiffAdd    ctermfg=white ctermbg=darkblue
 highlight DiffDelete ctermfg=brown ctermbg=0
