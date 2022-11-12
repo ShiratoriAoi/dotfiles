@@ -55,14 +55,20 @@ set notagbsearch
 
 
 "---------------------------------------
-" 2.5. var setup
+" 2.5. Color Scheme
 "---------------------------------------
 let s:vimscripts_dir = $HOME_DOTFILES . '/vimscripts'
+
 
 "---------------------------------------
 " 3. Color Scheme
 "---------------------------------------
-source `=s:vimscripts_dir . '/aoidesert.vim'` 
+" check the existence for symbolic link of color scheme
+let s:chk = getftype(expand("$VIMRUNTIME/colors/aoidesert.vim"))
+if s:chk == "" 
+    " if not exist, make symlink to colorscheme in dotfiles
+    call system("ln -s ". s:vimscripts_dir ."/aoidesert.vim \"$VIMRUNTIME/colors/aoidesert.vim\"")
+endif
 colorscheme aoidesert
 hi Search ctermfg=white
 highlight DiffAdd    ctermfg=white ctermbg=darkblue
@@ -149,7 +155,6 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-let s:vimscripts_dir = $HOME_DOTFILES . '/vimscripts'
 source `=s:vimscripts_dir . '/ctags.vim'`
 source `=s:vimscripts_dir . '/tex.vim'`
 source `=s:vimscripts_dir . '/plug.vim'`
