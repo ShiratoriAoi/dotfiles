@@ -42,7 +42,7 @@ function cht() {
 
     if [ $# -eq 0 ] ; then
         git -C $pathtd pull
-        git -C $pathtd adcmt ""
+        git -C $pathtd adcmt "task commit"
         git -C $pathtd push
     elif [ "$1" = "-h" ] ; then
         echo "cht"                    # pull adcmt push
