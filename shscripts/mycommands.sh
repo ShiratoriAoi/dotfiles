@@ -38,38 +38,16 @@ function chgit() {
 }
 
 function cht() {
-    local pathtd="$HOME/Dev/Projects/MyLibrary/PrivateMemos/ToDo/td.txt"
-    touch $pathtd
-    local td=`cat $pathtd`
+    local pathtd="$HOME/Dev/Projects/MyLibrary/PrivateMemos"
 
     if [ $# -eq 0 ] ; then
-        echo `head -n 1 $pathtd`
+        git -C $pathtd pull
+        git -C $pathtd adcmt ""
+        git -C $pathtd push
     elif [ "$1" = "-h" ] ; then
-        echo "cht"                    # show a task
-        echo "cht show"               # show all tasks
-        echo "cht stack <memo>"       # add stack todo
-        echo "cht restack <number>"   # restack selected row
-        echo "cht queue <memo>"       # add queue todo
-        echo "cht done (<number>)"    # remove top todo
+        echo "cht"                    # pull adcmt push
         echo "cht -h"                 # help
-    elif [ "$1" = "stack" ] ; then
-        sed -i "1i$2" "$pathtd"
-    elif [ "$1" = "queue" ] ; then
-        sed -i "$ a $2" "$pathtd"
-    elif [ "$1" = "restack" ] ; then
-        local a=`sed -n "$2P" "$pathtd"`
-        sed -i "$2d" "$pathtd"
-        sed -i "1i$a" "$pathtd"
-    elif [ "$1" = "show" ] ; then
-        cat -n $pathtd
-    elif [ "$1" = "done" ] ; then
-        if [ $# -eq 1 ] ; then
-            sed -i "1d" "$pathtd"
-        elif [ "$#" -eq 2 ] ; then
-            sed -i "$2d" "$pathtd"
-        fi
     fi
-    #cat queue.txt | grep -n "^- " | sed "s/:.*$//"
 }
 
 function chall() {
