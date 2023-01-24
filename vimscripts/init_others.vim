@@ -8,3 +8,5 @@ vmap <C-v> <Plug>(expand_region_shrink)
 " let g:minimap_width = 10
 " nnoremap <Leader>mp :MinimapToggle<CR>
 
+nnoremap <silent> ff <Plug>(jumpcursor-jump)
+

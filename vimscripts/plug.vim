@@ -44,6 +44,9 @@ call plug#begin()
 
     " autocomplete
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    " move plugin
+    Plug 'skanehira/jumpcursor.vim'
 call plug#end()
 
 
